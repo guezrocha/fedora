@@ -9,6 +9,6 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Adwaita Mono 14'
 # Uninstall software
 sudo dnf remove -y libreoffice*
 
-# Disable hinting and antialising
-gsettings set org.gnome.desktop.interface font-hinting 'none'
-gsettings set org.gnome.desktop.interface font-antialiasing 'none'
+# Configure hinting and antialising
+# gsettings set org.gnome.desktop.interface font-hinting 'full'
+# gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'

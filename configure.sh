@@ -1,17 +1,28 @@
-# Increase cursor size while keeping it sharp
+# Cursor size
 gsettings set org.gnome.desktop.interface cursor-size 36
 
-# Increase font size to 14
+# Font size to 14
 gsettings set org.gnome.desktop.interface font-name 'Adwaita Sans 14'
 gsettings set org.gnome.desktop.interface document-font-name 'Adwaita Sans 14'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Adwaita Mono 14'
 
-# Uninstall software
-sudo dnf remove -y libreoffice*
+# Hinting and anti-alising
+gsettings set org.gnome.desktop.interface font-hinting 'full'
+gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
 
-# Configure hinting and antialising
-# gsettings set org.gnome.desktop.interface font-hinting 'full'
-# gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
+# GDM
+sudo tee /etc/dconf/db/gdm.d/01-cursor << 'EOF'
+[org/gnome/desktop/interface]
+cursor-size=36
+font-name='Adwaita Sans 14'
+font-antialiasing='rgba'
+font-hinting='full'
+EOF
+
+sudo dconf update
+
+# Remove software
+sudo dnf remove -y libreoffice*
 
 # Remove Fedora watermark
 # gnome-extensions list

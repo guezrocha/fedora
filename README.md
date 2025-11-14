@@ -1,2 +1,2 @@
 # fedora
-A script to customize Fedora
+A script to configure Fedora.

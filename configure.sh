@@ -23,7 +23,4 @@ sudo dconf update
 
 # Remove software
 sudo dnf remove -y libreoffice*
-
-# Remove Fedora watermark
-# gnome-extensions list
-# gnome-extensions uninstall fedora-watermark@gnome-shell.fedoraproject.org
+sudo dnf remove gnome-shell-extension-background-logo
